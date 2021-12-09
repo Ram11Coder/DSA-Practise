@@ -40,12 +40,26 @@ class DLLNode {
 }
 
 /**
- * Operations 1.Insertion -> Insert at first -> Insert at end -> Insert at
- * position 2.Deletion -> Delete at first -> Delete at end -> Delete at position
- * 3.Count Calculate node in the list 4.Print print the DLL 5.Delete all Remove
+ * Operations 
+ * 1.Insertion 
+ * -> Insert at first
+ *-> Insert at end 
+ *-> Insert at position
+ *
+ * 2.Deletion 
+ * -> Delete at first 
+ * -> Delete at end 
+ * -> Delete at position
+ * 
+ * 3.Count
+ * Calculate node in the list 
+ * 
+ * 4.Print 
+ * print the DLL 
+ * 
+ * 5.Delete all Remove
  * all elements in the LL
  * 
- *
  */
 public class DLL {
 	private int count = 0;
@@ -192,6 +206,11 @@ public class DLL {
 			q = null;
 		}
 		count--;
+	}
+
+	public void deleteAll() {
+		head = null;
+		count = 0;
 	}
 
 	public static void main(String[] args) {
