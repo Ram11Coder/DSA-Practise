@@ -166,17 +166,18 @@ public class SLL {
 
 	@Override
 	public String toString() {
-		String res = "[";
+		String res = "";
 		if (head == null) {
 			return "[]";
 		}
 		LLNode temp = head;
-		res += temp.getData() + ",";
-		while ((temp = temp.getNext()) != null) {
-			res += temp.getData() + ",";
+
+		while (temp != null) {
+			res += "[" + temp.getData() + "] ";
+			temp = temp.getNext();
 		}
 
-		return res + "]";
+		return res;
 	}
 
 	public void deleteAll() {
