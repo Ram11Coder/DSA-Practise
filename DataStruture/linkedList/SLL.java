@@ -181,9 +181,92 @@ public class SLL {
 	}
 
 	public void deleteAll() {
-
 		head = null;
 		count = 0;
+	}
+
+	public boolean recursiveSearch(LLNode node, int data) {
+		if (node == null)
+			return false;
+		if (node.getData() == data)
+			return true;
+		return recursiveSearch(node.getNext(), data);
+	}
+
+	public boolean search(int data) {
+		if (head == null) {
+			return false;
+		}
+		LLNode temp = head;
+		while (temp != null) {
+			if (temp.getData() == data)
+				return true;
+			temp = temp.getNext();
+		}
+
+		return false;
+	}
+
+	public int getNth(int index) {
+		if (index >= count || head == null)
+			return -1;
+		LLNode temp = head;
+		for (int i = 0; i < index; i++)
+			temp = temp.getNext();
+
+		return temp.getData();
+	}
+
+	public int recursiveGetNth(LLNode node, int index) {
+		if (index >= count || node == null)
+			return -1;
+		if (index == 0)
+			return node.getData();
+
+		return recursiveGetNth(node.getNext(), index - 1);
+	}
+
+	public int getNthnodeFromEnd(int index) {
+		if (head == null || index > count)
+			return -1;
+		int pos = count - index;
+		LLNode temp = head;
+		for (int i = 0; i < pos; i++)
+			temp = temp.getNext();
+
+		return temp.getData();
+	}
+
+	static int c;
+
+	public void recursiveGetNthnodeFromEnd(LLNode node, int index) {
+
+		c = 0;
+		if (node == null || index > count)
+			return;
+		// int i = 0;
+		recursiveGetNthnodeFromEnd(node.getNext(), index);
+		if (++c == index)
+			System.out.println(node.getData());
+	}
+
+	public int findMiddleWithLength() {
+		int mid = count / 2, i = 1;
+		LLNode temp = head;
+		while (i <= mid) {
+			temp = temp.getNext();
+			i++;
+		}
+		return temp.getData();
+	}
+
+	public int findMiddle() {
+		LLNode p = head, q = head;
+		while (q != null && q.getNext() != null) {
+			p = p.getNext();
+			q = q.getNext().getNext();
+		}
+		return p.getData();
 	}
 
 	public static void main(String[] args) {
@@ -204,7 +287,7 @@ public class SLL {
 		list.insertPosition(2, 11);
 		list.insertPosition(3, 12);
 		System.out.println(list);
-		list.deleteAtFirst();
+		// list.deleteAtFirst();
 		list.deleteAtEnd();
 		list.deleteAtFirst();
 
@@ -213,9 +296,37 @@ public class SLL {
 		list.deleteElement(node);
 		System.out.println(list);
 		System.out.println(list.count());
-		list.deleteAll();
-		System.out.println(list.count());
+		// list.deleteAll();
+		// System.out.println(list.count());
+
+		System.out.println(list.search(14));
+		System.out.println(list.recursiveSearch(list.head, 20));
+		System.out.println(list.recursiveSearch(list.head, 13));
 		System.out.println(list);
+		System.out.println();
+//nth node
+		System.out.println(list.getNth(0));
+		System.out.println(list.getNth(3));
+		System.out.println(list.getNth(4));
+		// Recurive nth node
+
+		System.out.println(list.recursiveGetNth(list.head, 2));
+		System.out.println(list.recursiveGetNth(list.head, 0));
+		System.out.println(list.recursiveGetNth(list.head, 4));
+		System.out.println(list.recursiveGetNth(list.head, 3));
+//Nth node from end
+		System.out.println();
+		System.out.println(list.getNthnodeFromEnd(1));
+		System.out.println(list.getNthnodeFromEnd(4));
+		System.out.println(list.getNthnodeFromEnd(5));
+		System.out.println();
+		// recursive approach
+		list.recursiveGetNthnodeFromEnd(list.head, 1);
+		list.recursiveGetNthnodeFromEnd(list.head, 4);
+		list.recursiveGetNthnodeFromEnd(list.head, 5);
+		System.out.println("Middle elements");
+		System.out.println(list.findMiddle());
+		System.out.println(list.findMiddleWithLength());
 	}
 
 }
