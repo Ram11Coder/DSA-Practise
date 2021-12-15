@@ -1,7 +1,6 @@
 package linkedList;
 
 /**
- * @author thula
  *
  */
 public class LinkedList {
