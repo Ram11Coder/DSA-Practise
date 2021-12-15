@@ -1,5 +1,15 @@
 package stack;
-
+/**
+ * pace Complexity (for n push operations) O(n)
+Time Complexity of create Stack: DynArrayStack () O(1)
+Time Complexity of push() O(1) (Average)
+Time Complexity of pop() O(1)
+Time Complexity of top() O(1)
+Time Complexity of isEmpty() O(1)
+Time Complexity of isStackFull () O(1)
+Time Complexity of deleteStack() O(1)
+ *
+ */
 public class DynamicArrayStack {
 	private static final int CAPACITY = 8;
 	private int capacity;
