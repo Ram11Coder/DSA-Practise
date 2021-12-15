@@ -6,29 +6,29 @@ package stack;
  *
  */
 
-class ListNode {
-	private int data;
-	private ListNode next;
+class ListNode<T> {
+	private T data;
+	private ListNode<T> next;
 
-	public ListNode(int data) {
+	public ListNode(T data) {
 		this.data = data;
 		this.next = null;
 
 	}
 
-	public int getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(int data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 
-	public ListNode getNext() {
+	public ListNode<T> getNext() {
 		return next;
 	}
 
-	public void setNext(ListNode next) {
+	public void setNext(ListNode<T> next) {
 		this.next = next;
 	}
 
@@ -36,7 +36,7 @@ class ListNode {
 
 public class LinkListImplementationOfStack<T> {
 	private int length;
-	private ListNode top;
+	private ListNode<T> top;
 
 	public LinkListImplementationOfStack() {
 		length = 0;
@@ -47,19 +47,19 @@ public class LinkListImplementationOfStack<T> {
 		return length;
 	}
 
-	public void push(int data) {
-		ListNode temp = new ListNode(data);
+	public void push(T data) {
+		ListNode<T> temp = new ListNode<T>(data);
 		temp.setNext(top);
 		System.out.println("Pushed : " + data);
 		top = temp;
 		length++;
 	}
 
-	public int pop() throws Exception {
+	public T pop() throws Exception {
 		if (isEmpty()) {
 			throw new Exception("StackunderFlow!!");
 		}
-		int data = top.getData();
+		T data = top.getData();
 		top = top.getNext();
 		length--;
 		return data;
@@ -72,7 +72,7 @@ public class LinkListImplementationOfStack<T> {
 	@Override
 	public String toString() {
 		String res = "";
-		ListNode temp = top;
+		ListNode<T> temp = top;
 		while (temp != null) {
 			res += "[" + temp.getData() + ((temp.getNext() == null) ? "]" : "] -> ");
 			temp = temp.getNext();
