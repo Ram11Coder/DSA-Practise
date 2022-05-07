@@ -7,7 +7,8 @@ import java.util.Set;
 
 public class NOTALLFL {
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 1, 1, 2, 3, 2, 1, 1, 3 };
+		// int arr[] = { 1, 2, 3, 1, 1, 2, 3, 2, 1, 1, 3 };
+		int arr[] = { 1, 1, 2, 2, 3, 1, 2, 3, 1, 1, 2 };
 		System.out.println(solution1(arr, 3));
 		System.out.println(solution2(arr, 3));
 		System.out.println(optimisedSolution(arr, 3));
@@ -44,7 +45,7 @@ public class NOTALLFL {
 					map.put(arr[i], map.get(arr[i]) + 1);
 				} else {
 					diff++;
-					map.put(arr[i], i);
+					map.put(arr[j], 1);
 				}
 				if (diff == k) {
 					if (max < j - i)
@@ -76,6 +77,7 @@ public class NOTALLFL {
 			if (i - previousElement + 1 >= end - start + 1) {
 				end = i;
 				start = previousElement;
+			//	System.out.println((i - previousElement + 1) + " " + (end - start + 1));
 				if (max < i - previousElement + 1)
 					max = i - previousElement + 1;
 			}
