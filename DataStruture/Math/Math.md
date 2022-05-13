@@ -28,3 +28,69 @@ repetetion is less
 (a+b)%m = ((a%m)+(b%m))%m
 (a-b)%m = ((a%m)-(b%m))%m
 (a*b)%m = ((a%m)*(b%m))%m
+
+
+
+### Modular division
+(a/b)%m =((a%m)*(b^-1&m))%m
+
+b^-1 -> modular multiplicative inverse
+
+Used in combinations
+
+
+what is inverse?
+Y is inverse of x, if x*y=1. y=1/x;
+All real numbers other than 0 have an inverse
+
+What is Modular multiplicative inverse?
+A MMI of an integer 'A' is integer 'X', such that the product A*X=1(mod m)
+
+Formula :(A*X)%m = 1
+
+example:
+A=3,M=7
+X= 0 to M-1
+(3*5)%7=1
+
+so X is MMI of A with respect to M
+
+
+For different number of M we will get different MMI(X) of same number(A)
+
+Question
+Can we find MMI of all numbers?
+Just see example 
+A=4, M=2 -> no MMI exist
+
+Before checking MMI, it show satisfy the below property
+gcd(A,M)=1
+
+A,M are co-primes
+
+
+X is a MMI of A
+
+
+
+Approach:
+1. Naive approach
+2. Eucledean algorithm
+extended euclidean algo
+
+formula
+Ax+By=gcd(A,B)
+
+gcd(A,M)=1
+
+Ax+My=1
+mod both side
+
+Ax%M+My%M=mod M
+
+My%M=0
+
+Ax%M=mod M
+
+
+x-> MMI
