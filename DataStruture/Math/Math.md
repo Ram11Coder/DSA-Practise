@@ -94,3 +94,34 @@ Ax%M=mod M
 
 
 x-> MMI
+
+Modular division can not occur directly we need to find MMI to find modular division
+
+
+### Modular Exponentiation
+
+(a^b)%m
+
+if b is even then 
+
+(a^b)%m -> (a^(b/2)*a^(b/2)) mod m
+       
+ = ((a^(b/2)mod m)*(a^(b/2)mod m ))) mod m
+  
+  we dividing the equation again and again, here used as recursion
+  
+  base condition a=0  -> 0
+       			 b=0  -> 1
+   
+if b is odd then 
+
+(a^b)%m -> (a^(b)*a^(b-1)) mod m
+       
+ = ((a^(b)mod m)*(a^(b-1)mod m ))) mod m
+  
+  here = b-1 -> even , repeation of even number
+  
+  we dividing the equation again and again, here used as recursion
+  
+  base condition a=0  -> 0
+       			 b=0  -> 1 

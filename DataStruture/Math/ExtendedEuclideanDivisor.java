@@ -22,7 +22,7 @@ class Point {
 public class ExtendedEuclideanDivisor {
 
 	public static void main(String[] args) {
-		int a = 15, b = 3, m = 7;
+		int b = 3, m = 7;
 		Point x = new Point(), y = new Point();
 
 		int result = euclideanGCD(b, m, x, y);
@@ -35,7 +35,7 @@ public class ExtendedEuclideanDivisor {
 
 	}
 
-	 static int euclideanGCD(int a, int b, Point x, Point y) {
+	static int euclideanGCD(int a, int b, Point x, Point y) {
 		if (b == 0) {
 			x.setX(1);
 			y.setX(0);
