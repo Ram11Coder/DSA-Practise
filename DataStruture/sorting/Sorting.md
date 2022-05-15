@@ -52,5 +52,16 @@ partially sorted array insertion sort is best algorithm
 n-> merge the array back 
 - Time complexity O(n*log(n))
 - Space complexity O(n)
+Algorithm - Divide and conquer
+
+### Quick sort
+- Finding pivot is partition
+- divide the array with smaller element with one side and larger element with other side
+
+T(n-1)+n =n(n-1)/2 = O(n^2)
+- Time complexity O(n^2)) - If the array is already sorted 
+- Best case - 0(n*log(n)) -> array is divided in each half
+- Space complexity O(1)
+Algorithm - Divide and conquer
 
 
