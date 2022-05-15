@@ -64,4 +64,11 @@ T(n-1)+n =n(n-1)/2 = O(n^2)
 - Space complexity O(1)
 Algorithm - Divide and conquer
 
+### Counting sort
+- Linear algorithm
+- Stable
+- non-Comparison
+- Time complexity max(O(n),O(k))
+k is range of values
+- Space complexity O(n)
 
