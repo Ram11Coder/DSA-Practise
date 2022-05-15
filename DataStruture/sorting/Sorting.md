@@ -43,3 +43,14 @@ Approach
 Note:
 partially sorted array insertion sort is best algorithm
 
+### Merge sort
+- We are keep on dividing the array in 2 parts
+- At any point we will have 2 sorted arrays
+- Once the 2 sorted array found merge them
+- T(n)=2*T(n/2)+n
+2*T(n/2) - dividing the array in 2 seperate part
+n-> merge the array back 
+- Time complexity O(n*log(n))
+- Space complexity O(n)
+
+
