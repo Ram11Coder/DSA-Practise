@@ -6,6 +6,12 @@ import java.util.stream.Stream;
 
 //https://www.codechef.com/problems/SC31
 public class SC31 {
+
+	/**
+	 * Use single char array to solve problem
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
