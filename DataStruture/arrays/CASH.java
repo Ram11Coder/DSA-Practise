@@ -2,7 +2,9 @@ package arrays;
 
 import java.util.Scanner;
 
-public class CASH {
+
+public class CASH{
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
