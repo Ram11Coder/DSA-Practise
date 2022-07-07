@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Scanner;
 
-
+//https://www.codechef.com/problems/CASH
 public class CASH{
 
 	public static void main(String[] args) {
