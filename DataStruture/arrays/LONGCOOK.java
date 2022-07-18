@@ -12,8 +12,14 @@ public class LONGCOOK {
 				if (i % 100 == 0) {
 					if (i % 400 == 0)
 						leap[i] = true;
+					else
+						leap[i] = false;
 				}
-			}
+				else {
+					leap[i] = true;
+				}
+			}else
+				leap[i] = false;
 		}
 
 		int febDate[] = new int[401];
@@ -32,9 +38,9 @@ public class LONGCOOK {
 
 		int overLap[] = new int[401];
 		for (int i = 1; i < overLap.length; i++) {
-			if (overLap[i] == 7) {
+			if (febDate[i] == 7) {
 				overLap[i] = 1;
-			} else if (overLap[i] == 6) {
+			} else if (febDate[i] == 6) {
 				if (!leap[i])
 					overLap[i] = 1;
 			}
